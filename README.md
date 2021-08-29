@@ -64,9 +64,11 @@ pi-worker01 192.168.0.202
     4. sudo cat /var/lib/rancher/k3s/server/token
         to get token for worker pi
         
-        
-32. To add worker cluster:
-curl -sfL https://get.k3s.io | K3S_URL=https://192.168.0.201:6443 K3S_TOKEN=K10fed596e32cd619187e5351dcdbf52335aaea39ba52ca6933e3dd0c722483a1a9::server:55846f592aeffabb8c7ac70b7e3c3899 sh -
 
+### Kubernetes (k3s) Setup - Worker  (login to the Pi board using ssh or whatever prefer method)
+    1. To add worker cluster:
+        curl -sfL https://get.k3s.io | K3S_URL=https://192.168.0.201:6443   K3S_TOKEN=K10fed596e32cd619187e5351dcdbf52335aaea39ba52ca6933e3dd0c722483a1a9::server:55846f592aeffabb8c7ac70b7e3c3899 sh -
+
+***Do the same steps above if you have more than 1 pi-workerX***
 
 
