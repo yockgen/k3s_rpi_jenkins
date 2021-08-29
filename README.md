@@ -1,14 +1,14 @@
-# k3s_rpi_jenkins
-Jenkins container on RPI (Raspberry PI 3) Kubernetes K3s cluster
+# k3s_rpi_jenkins - How To Setup Jenkins on RPI Kubernetes Cluster
+Jenkins server container on RPI (Raspberry PI 3) k3s (Kubernetes) cluster, the instruction is based on two RPI board cluster (1 master node and 1 worker node)
 
-## To build RPI 3 board cluster   
+## A. Setup Kubernetes Kluster 
 
 ### Setting up at least 2 Pi Board (1 master, and N number of worker)
 Setting static ip (you could use whatever ip you like):     
 pi-master 192.168.0.201      
 pi-worker01 192.168.0.202     
 
-### Pi USB Card Preparation
+### Pi USB Card Preparation - master
 
     1. nano /etc/hosts 
         127.0.0.1       localhost
@@ -72,3 +72,18 @@ pi-worker01 192.168.0.202
 ***Do the same steps above if you have more than 1 pi-workerX***
 
 
+## B. Setup Jenkins Server on k3s (Kubernetes) cluster
+***YAML files mentioned below uploaded to this repo***
+***Customized Jenkins Docker Image Dockerfile could be found in this repo and upstream to https://hub.docker.com/repository/docker/yockgen/rpijenkins***
+    1. kubectl create namespace jenkins
+    2. kubectl create -f jenkins-pvc.yaml -n jenkins
+    3. kubectl create -f jenkins-deployment.yaml -n jenkins
+    4. kubectl get pods -n jenkins
+    5. kubectl get pods -n jenkins -o wide
+    6. kubectl create -f jenkins-service.yaml --namespace jenkins
+    7. kubectl get pods -n jenkins -o wide
+    8. kubectl logs -n jenkins jenkins-deployment-{...random hash....}
+
+## C. Access Jenkins via browser
+
+http://[pi master server ip]:30000/
