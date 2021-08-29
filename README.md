@@ -75,6 +75,7 @@ pi-worker01 192.168.0.202
 ## B. Setup Jenkins Server on k3s (Kubernetes) cluster
 ***YAML files mentioned below uploaded to this repo***
 ***Customized Jenkins Docker Image Dockerfile could be found in this repo and upstream to https://hub.docker.com/repository/docker/yockgen/rpijenkins***
+
     1. kubectl create namespace jenkins
     2. kubectl create -f jenkins-pvc.yaml -n jenkins
     3. kubectl create -f jenkins-deployment.yaml -n jenkins
@@ -86,4 +87,4 @@ pi-worker01 192.168.0.202
 
 ## C. Access Jenkins via browser
 
-http://[pi master server ip]:30000/
+http://[master server ip]:30000/
