@@ -10,7 +10,13 @@ pi-worker01 192.168.0.202
 
 ### Pi USB Card Preparation - master
 
-    1. nano /etc/hosts 
+    1. Download lite version of Raspbian Raspberry Pi OS Lite
+        https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-lite.zip
+    
+    2. Unzip and flash the image file to USB drive with at least 32 GB (using balenaEtcher or any prefer tool)
+        https://www.balena.io/etcher/
+        
+    3. nano /etc/hosts 
         127.0.0.1       localhost
         ::1             localhost ip6-localhost ip6-loopback
         ff02::1         ip6-allnodes
@@ -18,11 +24,11 @@ pi-worker01 192.168.0.202
 
         127.0.1.1               pi-master01
         
-    2. nano /etc/hostname
+    4. nano /etc/hostname
         pi-master01
          
-    4. cd /boot
-    5. touch ssh
+    5. cd /boot
+    6. touch ssh
     
     
 ***Do the same steps above for worker USB card but replace 'pi-master' text with 'pi-worker01' for example, the same steps if you have more than 1 pi-workerX)***
