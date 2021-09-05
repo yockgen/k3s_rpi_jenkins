@@ -1,0 +1,35 @@
+pipeline {
+    
+    agent any
+    
+    stages {
+        stage('Dependencies') { 
+            steps {
+                sh 'apt-get update'
+                sh 'apt install -y python-pip'
+                sh 'pip install beautifulsoup4'
+            }
+        }
+        
+        stage('Build') { 
+            steps {
+                sh 'git clone https://yockgen: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@github.com/yockgen/4dML.git'
+                sh 'cd ./4dML && ls -lrt'
+            }
+        }
+        
+        
+        stage('Test') { 
+            steps {
+                echo 'yockgen 02'
+                sh 'python --version'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'yockgen 03'
+                sh 'gcc --version'
+            }
+        }
+    }
+}
