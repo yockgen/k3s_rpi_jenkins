@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'rm -rf ./4dML'
-                sh 'git clone https://yockgen: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@github.com/yockgen/4dML.git'
+                sh 'git clone https://yockgen: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@github.com/yockgen/4dML.git'
                 sh 'cd ./4dML && ls -lrt'
             }
         }
