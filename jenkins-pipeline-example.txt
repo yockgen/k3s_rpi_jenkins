@@ -1,21 +1,22 @@
 pipeline {
 
     agent any
-
     stages {
         stage('Dependencies') {
             steps {
-                sh 'apt-get update'
-                sh 'apt install -y python-pip'
                 sh 'pip install beautifulsoup4'
+                
             }
         }
 
         stage('Build') {
             steps {
-                sh 'rm -rf ./4dML'
-                sh 'git clone https://yockgen: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@github.com/yockgen/4dML.git'
-                sh 'cd ./4dML && ls -lrt'
+                withCredentials([usernamePassword(credentialsId: 'yockgen', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    sh 'rm -rf ./4dML'
+                    sh 'git clone https://$user:$pass@github.com/yockgen/4dML.git'
+                    sh 'cd ./4dML && ls -lrt'
+                }
+                
             }
         }
 
