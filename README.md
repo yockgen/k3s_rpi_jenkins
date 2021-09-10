@@ -78,9 +78,9 @@ pi-worker01 192.168.0.202
 ***Do the same steps above if you have more than 1 pi-workerX***
 
 
-## B. Setup Jenkins Server on k3s (Kubernetes) cluster
-***YAML files mentioned below uploaded to this repo***
-***Customized Jenkins Docker Image Dockerfile could be found in this repo and upstream to https://hub.docker.com/repository/docker/yockgen/rpijenkins***
+## B. Setup Jenkins Server on k3s (Kubernetes) cluster   
+***YAML files mentioned below uploaded to this repo***   
+***Customized Jenkins Docker Image Dockerfile could be found in this repo and upstream to https://hub.docker.com/repository/docker/yockgen/rpijenkins***  
 
     1. kubectl create namespace jenkins
     2. kubectl create -f jenkins-pvc.yaml -n jenkins
