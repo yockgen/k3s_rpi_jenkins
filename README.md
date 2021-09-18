@@ -99,4 +99,4 @@ kubectl delete all --all -n jenkins
 kubectl delete namespace jenkins  
 
 ## F. To refresh deployment   
-kubectl rollout restart deployment/yockgen02-deployment
+kubectl rollout restart deployment/jenkins-deployment
