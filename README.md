@@ -97,3 +97,6 @@ http://[master server ip]:30000/
 ## D. To remove everything from namespace  
 kubectl delete all --all -n jenkins  
 kubectl delete namespace jenkins  
+
+## F. To refresh deployment   
+kubectl rollout restart deployment/yockgen02-deployment
