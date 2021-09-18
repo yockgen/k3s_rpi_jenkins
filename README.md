@@ -85,10 +85,9 @@ pi-worker01 192.168.0.202
     1. kubectl create namespace jenkins
     2. kubectl create -f jenkins-pvc.yaml -n jenkins
     3. kubectl create -f jenkins-deployment.yaml -n jenkins
-    4. kubectl get pods -n jenkins
-    5. kubectl get pods -n jenkins -o wide
-    6. kubectl create -f jenkins-service.yaml --namespace jenkins
-    7. kubectl get pods -n jenkins -o wide
+    4. kubectl get pods -n jenkins -o wide
+    5. kubectl create -f jenkins-service.yaml --namespace jenkins
+    6. kubectl get services -n jenkins -o wide
     8. kubectl logs -n jenkins jenkins-deployment-{...random hash....}
 
 ## C. Access Jenkins via browser
