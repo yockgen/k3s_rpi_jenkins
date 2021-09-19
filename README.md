@@ -100,3 +100,7 @@ kubectl delete namespace jenkins
 
 ## F. To refresh deployment   
 kubectl rollout restart deployment/jenkins-deployment -n jenkins
+
+## G. To remove node from cluster  
+kubectl drain pi-worker01 --ignore-daemonsets --delete-local-data  
+kubectl delete node pi-worker01  
