@@ -16,6 +16,14 @@ pi-worker01 192.168.0.202
     2. Unzip and flash the image file to USB drive with at least 32 GB (using balenaEtcher or any prefer tool)
         https://www.balena.io/etcher/
         
+    
+    (Optional: if you want to use SSH remote to Pi board from this step onward)
+    2.1 Inserted the sd card to Pi board to boot for the first time for creating a boot drive for step 3, after booted remove the card and put it back to PC    
+    2.2 If you're using Windows OS, open "Windows Powershell", go to boot drive (e.g. E:), type "new-item ssh" to enable SSH on thr sd card    
+    2.3 Boot the Pi board with the SD card again, and SSH to the board 
+    2.4 find the IP address from your router, typically client named as "raspbeerypi", username:pi pwd:raspberry         
+    
+    
     3. nano /etc/hosts 
         127.0.0.1       localhost
         ::1             localhost ip6-localhost ip6-loopback
